@@ -1,0 +1,49 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class BodyMenu extends Model
+{
+    use HasFactory;
+    protected $fillable = ['existing_record_id','language_id','title','image','value','display_order','is_active','created_by','updated_by'];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        self::creating(function ($model) {
+            $model->created_by = auth()->user()->id;
+        });
+
+        self::created(function ($model) {
+        });
+
+        self::updating(function ($model) {
+            $model->updated_by = auth()->user()->id;
+        });
+
+        self::updated(function ($model) {
+        });
+
+        self::deleting(function ($model) {
+            // ... code here
+        });
+
+        self::deleted(function ($model) {
+            // ... code here
+        });
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo(Admin::class, 'created_by');
+    }
+
+    public function updatedBy()
+    {
+        return $this->belongsTo(Admin::class, 'updated_by');
+    }
+}

@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'Contact Information' => 'Contact Information',
+    'Please put the name order properly' => 'Please put the name order properly',
+    'Login' => 'Login',
+    'for Personalization' => 'for Personalization',
+    'Title' => 'Title',
+    'Full Name' => 'Full Name',
+    'First Name' => 'First Name',
+    'Middle Name' => 'Middle Name',
+    'Last Name' => 'Last Name',
+    'Mobile No' => 'Mobile No',
+    'Home No' => 'Home No.',
+    'Email' => 'Email',
+    'Nationality' => 'Nationality',
+    'I\'m a passenger on the flight' => 'I\'m a passenger on the flight',
+    'Remember these details for next visit. More' => 'Remember these details for next visit. More',
+    'Only If you are Sky Club Member' => 'Only If you are Sky Club Member',
+    'Client Number' => 'Client Number',
+    'Passengers Information' => 'Passengers Information',
+    'Note:All passengers must have a valid passport and/or visa. If your travel documentation is incomplete or inadequate you will not be allowed to board the aircraft.' => 'Note:All passengers must have a valid passport and/or visa. If your travel documentation is incomplete or inadequate you will not be allowed to board the aircraft.',
+    'Passenger (Adult)' => 'Passenger (Adult)',
+    'Passenger (Child)' => 'Passenger (Child)',
+    'I now agree the Terms and Conditions and proceed for payment.' => 'I now agree the <a target="_blank" href="'.route('content.view', 'terms-and-conditions').'">Terms and Conditions</a> and proceed for payment.',
+    'Document Type' => 'Document Type',
+    'Document Number' => 'Document Number',
+    'Address' => 'Address',
+    'Gender' => 'Gender',
+    'Charge Type' => 'Charge Type',
+    'Adult' => 'Adult',
+    'Child' => 'Child'
+];

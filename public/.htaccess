@@ -1,0 +1,98 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    ##START##
+    RewriteRule ^site/show/about-us-introduction$ /about/introduction [R=301,L]
+    RewriteRule ^site/show/about-us-objectives$ /about/objectives [R=301,L]
+
+    RewriteRule ^site/show/the-council$ /council-committee/the-council [R=301,L]
+    RewriteRule ^site/show/standing-committee$ /council-committee/standing-committee [R=301,L]
+    RewriteRule ^site/show/non-standing-committee$ /council-committee/non-standing-committee [R=301,L]
+    RewriteRule ^site/show/accounting-techinician-board$ /council-committee/accounting-technician-board [R=301,L]
+    RewriteRule ^site/show/board-of-studies$ /council-committee/board-of-studies [R=301,L]
+    RewriteRule ^site/show/quality-assurance-board$ /council-committee/quality-assurance-board [R=301,L]
+
+    RewriteRule ^site/show/member-cop$ /members/member-cop [R=301,L]
+    RewriteRule ^site/show/list-of-members$ /download/list-of-members [R=301,L]
+    RewriteRule ^site/show/cop-holders-renewed$ /download/cop-holders-renewed [R=301,L]
+    RewriteRule ^site/show/list-of-firm$ /download/list-of-firm [R=301,L]
+    RewriteRule ^site/show/member-upgradation$ /members/member-upgradation [R=301,L]
+    RewriteRule ^site/show/firm-registration-procedure$ /members/firm-registration-procedure [R=301,L]
+    RewriteRule ^site/show/fee-structure$ /members/fee-structure [R=301,L]
+    RewriteRule ^site/show/cpe$ /download/cpe [R=301,L]
+    RewriteRule ^site/show/code-of-ethics$ /download/code-of-ethics [R=301,L]
+    RewriteRule ^site/show/province-listing$ /download/province-listing [R=301,L]
+
+    RewriteRule ^site/show/about-ca-education$ /students/about-ca-education [R=301,L]
+    RewriteRule ^site/show/criteria-operational-guidelines-and-video-tutorial$ /students/criteria-operational-guidelines-and-video-tutorial [R=301,L]
+    RewriteRule ^site/show/final-exam-criteria$ /students/criteria [R=301,L]
+    RewriteRule ^site/show/final-exam-result$ /students/result [R=301,L]
+    RewriteRule ^site/show/articleship$ /students/articleship [R=301,L]
+
+
+    RewriteRule ^site/show/syllabus$ /download/syllabus [R=301,L]
+    RewriteRule ^site/show/it-training-result$ /download/province-listing [R=301,L]
+
+    RewriteRule ^site/show/scholarship-and-award$ /students/scholarship-and-award [R=301,L]
+    RewriteRule ^site/show/accreditation$ /download/accreditation [R=301,L]
+    RewriteRule ^site/show/student-manual$ /download/student-manual [R=301,L]
+    RewriteRule ^site/show/at-list$ /download/at-list [R=301,L]
+
+
+
+    RewriteRule ^site/show/audit-quality-assurance$ /quality-assurance/audit-quality-assurance [R=301,L]
+    RewriteRule ^site/show/quality-assurance-board1$ /quality-assurance-board [R=301,L]
+    RewriteRule ^site/show/quality-assurance-unit$ /quality-assurance/quality-assurance-unit [R=301,L]
+    RewriteRule ^site/show/qa-information-booklet$ /quality-assurance/qa-information-booklet [R=301,L]
+    RewriteRule ^site/show/model-audit-practice-manual$ /quality-assurance/model-audit-practice-manual [R=301,L]
+    RewriteRule ^site/show/qab-annual-report$ /quality-assurance/qab-annual-report [R=301,L]
+    RewriteRule ^site/show/AuditManualNepali$ /quality-assurance/audit-documentation-manual-nepali-version [R=301,L]
+    RewriteRule ^site/show/other$ /quality-assurance/other [R=301,L]
+    RewriteRule ^site/show/AQA$ /quality-assurance/audit-quality-assurance-review-procedure-nepali [R=301,L]
+    RewriteRule ^site/show/QAU$ /quality-assurance/quality-assurance-unit-procedures-manual [R=301,L]
+    RewriteRule ^site/show/nsqc1$ /quality-assurance/reference-material-for-implementation-of-nsqc-1 [R=301,L]
+    RewriteRule ^site/show/mou-mra$ /download/mou-mra [R=301,L]
+    RewriteRule ^site/show/laws-legislation$ /download/laws-legislation [R=301,L]
+
+
+    RewriteRule ^site/show/downloads$ /download/laws-legislation [R=301,L]
+    RewriteRule ^site/show/career$ /career [R=301,L]
+    RewriteRule ^site/show/useful-links$ /useful-links [R=301,L]
+    RewriteRule ^site/catalog/notice$ /notices [R=301,L]
+    RewriteRule ^site/catalog/recent-activities$ /news/recent-activities [R=301,L]
+    RewriteRule ^site/catalog/events$ /news/upcoming-events [R=301,L]
+    RewriteRule ^site/catalog/knowledge-portal$ /knowledge-portal-resources-publication [R=301,L]
+    RewriteRule ^site/catalog/resources-publication$ /knowledge-portal-resources-publication [R=301,L]
+
+
+    RewriteRule ^site/show/nepal-accounting-standards$ /nepal-accounting-standards [R=301,L]
+    RewriteRule ^site/show/nepal-standards-on-auditing$ /nepal-standards-on-auditing [R=301,L]
+    RewriteRule ^site/catalog/chapters$ /chapters [R=301,L]
+    RewriteRule ^site/view/council-election-notice$ /council-election-notice [R=301,L]
+    
+
+
+
+
+
+    RewriteRule ^site/show/(.*)$ /about/$1 [R=301,L]
+    ##END##
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
